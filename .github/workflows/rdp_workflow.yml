@@ -17,11 +17,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-
-    - name: Install Dependencies
-      run: |
-        pip install pyautogui
-        pip install pypiwin32
+        
+- name: Install Dependencies
+  run: |
+    pip install pyautogui
+    pip install pypiwin32
+    pip install pyperclip
 
     - name: Run PyAutoGUI Script
       run: |
