@@ -1,6 +1,5 @@
 import pyautogui
 import time
-import os
 
 def main():
     # Open the Start menu
@@ -38,6 +37,18 @@ def main():
     pyautogui.write('iex (iwr https://raw.githubusercontent.com/rustdesk/rustdesk/master/scripts/install.ps1 -UseBasicP  \owerShell)')
     pyautogui.press('enter')
     time.sleep(10)  # Wait for RustDesk installation to complete
+
+    # Open RustDesk and capture the remote ID
+    pyautogui.press('win')
+    time.sleep(2)
+    pyautogui.write('RustDesk')
+    pyautogui.press('enter')
+    time.sleep(10)  # Wait for RustDesk to open
+    pyautogui.hotkey('alt', 'g')  # Press Alt+G to capture remote ID
+    time.sleep(2)
+    remote_id = pyautogui.paste()  # Get the captured remote ID
+
+    print("RustDesk Remote ID:", remote_id)
 
 if __name__ == "__main__":
     main()
