@@ -1,4 +1,5 @@
 import pyautogui
+import pyperclip 
 import time
 
 def main():
@@ -38,7 +39,7 @@ def main():
     pyautogui.press('enter')
     time.sleep(10)  # Wait for RustDesk installation to complete
 
-    # Open RustDesk and capture the remote ID
+   # Open RustDesk and capture the remote ID
     pyautogui.press('win')
     time.sleep(2)
     pyautogui.write('RustDesk')
@@ -46,7 +47,9 @@ def main():
     time.sleep(10)  # Wait for RustDesk to open
     pyautogui.hotkey('alt', 'g')  # Press Alt+G to capture remote ID
     time.sleep(2)
-    remote_id = pyautogui.paste()  # Get the captured remote ID
+    
+    # Get the captured remote ID using pyperclip
+    remote_id = pyperclip.paste()  # Use pyperclip to get clipboard contents
 
     print("RustDesk Remote ID:", remote_id)
 
